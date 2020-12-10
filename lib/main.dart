@@ -22,11 +22,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CHIP8 BLE NUMPAD',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'CHIP8 Numpad'),
     );
   }
 }
@@ -160,7 +161,7 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Chip8 Numpad"),
+          title: Text("CHIP8 Numpad"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
@@ -172,8 +173,7 @@ class SecondRoute extends StatelessWidget {
               int valInt;
               if (ipVal != "Back") {
                 valInt = int.parse(ipVal.toString(), radix: 16);
-              }
-              else {
+              } else {
                 valInt = 0xFF;
               }
               debugPrint('$valInt');
@@ -215,4 +215,3 @@ class SecondRoute extends StatelessWidget {
         ));
   }
 }
-
